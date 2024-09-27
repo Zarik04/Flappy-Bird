@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     public AudioClip jumpSound;
     public AudioClip gameOverSound;
-    // public AudioClip scoreSound;
+    public AudioClip scoreSound;
     void Start()
     {
         //get rigibody2d Component of the BirdbBek
@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
     {
         score++;
         scoreText.text = score.ToString();
+        SoundManager.instance.PlaySound (scoreSound);
     }
 
 }

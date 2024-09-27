@@ -953,6 +953,7 @@ MonoBehaviour:
   isDead: 0
   jumpSound: {fileID: 8300000, guid: 0c15ed8f1f772774786b7e07b81f4fd1, type: 3}
   gameOverSound: {fileID: 8300000, guid: 6e91dc5590ed5bd4bb409867050ae39c, type: 3}
+  scoreSound: {fileID: 8300000, guid: cd9e0dbf359622b499b982be3485eeae, type: 3}
 --- !u!61 &867828326
 BoxCollider2D:
   m_ObjectHideFlags: 0

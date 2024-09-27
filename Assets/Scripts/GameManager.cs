@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ public class GameManager : MonoBehaviour
     public Player birdBek;
 
     public Text gameOverTxt;
+    public Text scoreText;
     public float timerBack = 5;
 
     private void Start(){
@@ -29,6 +31,7 @@ public class GameManager : MonoBehaviour
     }
     public void StartGame(){
         startBtn.SetActive(false);
+        scoreText.gameObject.SetActive(true);
         Time.timeScale = 1;
     }
     public void GameOver(){

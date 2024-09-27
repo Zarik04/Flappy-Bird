@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     public float speed = 5.0f;//control the speed
+    private int score = 0;
+    public Text scoreText;
     private Rigidbody2D rb;
     public bool isDead = false;
 
@@ -28,8 +31,16 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other){
+    private void OnCollisionEnter2D(Collision2D other)
+    {
         isDead = true;
         SoundManager.instance.PlaySound (gameOverSound);
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        score++;
+        scoreText.text = score.ToString();
+    }
+
 }

@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         //GetMouseButtonDown(0) --> left side mouse button pressed down
-        if(Input.GetMouseButtonDown(0) && isDead==false){
+        if(Input.GetMouseButtonDown(0) && isDead==false && !isAnimating){
             rb.velocity = Vector2.up * speed;
             SoundManager.instance.PlaySound (jumpSound);
             StartCoroutine(PlayFlapAnimation());

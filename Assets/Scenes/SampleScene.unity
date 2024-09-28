@@ -951,6 +951,12 @@ MonoBehaviour:
   speed: 5
   scoreText: {fileID: 1990726380}
   isDead: 0
+  spriteRenderer: {fileID: 867828328}
+  birdSprites:
+  - {fileID: 966911919, guid: 2bf87d3707522467d8ef6d43ad1de96d, type: 3}
+  - {fileID: -1598308313, guid: 2bf87d3707522467d8ef6d43ad1de96d, type: 3}
+  - {fileID: -84792570, guid: 2bf87d3707522467d8ef6d43ad1de96d, type: 3}
+  animationSpeed: 0.1
   jumpSound: {fileID: 8300000, guid: 0c15ed8f1f772774786b7e07b81f4fd1, type: 3}
   gameOverSound: {fileID: 8300000, guid: 6e91dc5590ed5bd4bb409867050ae39c, type: 3}
   scoreSound: {fileID: 8300000, guid: cd9e0dbf359622b499b982be3485eeae, type: 3}

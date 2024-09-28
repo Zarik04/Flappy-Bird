@@ -12,6 +12,12 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     public bool isDead = false;
 
+    public SpriteRenderer spriteRenderer;  // Reference to the bird's SpriteRenderer
+    public Sprite[] birdSprites;           // Array to hold 3 bird sprites
+    public float animationSpeed = 0.1f;    // Speed of the animation (how fast to switch sprites)
+
+    private bool isAnimating = false;      // To check if the bird is animating
+
     public AudioClip jumpSound;
     public AudioClip gameOverSound;
     public AudioClip scoreSound;
@@ -28,7 +34,20 @@ public class Player : MonoBehaviour
         if(Input.GetMouseButtonDown(0) && isDead==false){
             rb.velocity = Vector2.up * speed;
             SoundManager.instance.PlaySound (jumpSound);
+            StartCoroutine(PlayFlapAnimation());
         }
+    }
+
+    // Coroutine to play the flapping animation
+    IEnumerator PlayFlapAnimation()
+    {
+        isAnimating = true;  // Set the animating flag to true
+        for (int i = 0; i < birdSprites.Length; i++)
+        {
+            spriteRenderer.sprite = birdSprites[i];  // Switch to the next sprite
+            yield return new WaitForSeconds(animationSpeed);  // Wait for a short duration
+        }
+        isAnimating = false;  // Set animating flag to false when animation ends
     }
 
     private void OnCollisionEnter2D(Collision2D other)
